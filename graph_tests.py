@@ -10,3 +10,4 @@ plt.title("Categories vs. Amounts")
 
 lines = plt.plot(["Men", "Women", "Children"], [3, 5, 9])
 plt.show()
+
