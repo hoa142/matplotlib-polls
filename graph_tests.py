@@ -1,12 +1,12 @@
 import matplotlib.pyplot as plt
 
 plt.figure()
-## lines = plt.plot([1, 2, 3, 4], [3, 5, 9, 25])
-# plt.setp(lines, color="#ff5566")
 
-plt.xlabel("Categories")
-plt.ylabel("Amounts")
-plt.title("Categories vs. Amounts")
+figure = plt.figure()
+axes = figure.add_subplot()
+axes.set_title("A test line graph")
+axes.set_xlabel("Numbers")
+axes.set_ylabel("Occurrences")
+axes.plot([1, 2, 3, 4], [3, 5, 9, 25])
 
-lines = plt.plot(["Men", "Women", "Children"], [3, 5, 9])
 plt.show()
