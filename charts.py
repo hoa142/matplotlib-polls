@@ -11,3 +11,17 @@ def create_pie_chart(options):
     )
 
     return figure
+
+def create_bar_chart(polls):
+    figure = plt.figure(figsize=(10, 10))
+    axes = figure.add_subplot(1, 1, 1)
+    axes.set_title("Poll to their vote counts")
+    axes.set_ylabel("Vote count")
+
+    axes.bar(
+        range(len(polls)),
+        [poll[1] for poll in polls],
+        tick_label=[poll[0] for poll in polls]
+    )
+    return figure
+
