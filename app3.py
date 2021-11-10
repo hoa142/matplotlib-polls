@@ -1,11 +1,22 @@
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
 
 figure = plt.figure()
-figure.subplots_adjust(wspace=0.5)
-ax1 = figure.add_subplot(1, 2, 1)
-ax2 = figure.add_subplot(1, 2, 2)
+axes = figure.add_subplot()
 
-ax1.plot([1, 2, 3, 4], [3, 7, 11, 23])
-ax2.plot([1, 2, 3, 4], [5, 9, 17, 25])
+axes.bar(
+    range(6),
+    [150, 90, 78, 55, 125, 190],
+    tick_label=["Apple", "Burberry", "Google", "Zara", "Microsoft", "Superdry"],
+    color=["#5c44fd", "#ff5566", "#5c44fd", "#ff5566", "#5c44fd", "#ff5566"],
+)
 
-figure.savefig("graphs.png", bbox_inches="tight")
+handles = [
+    Patch(facecolor="#5c44fd", label="Tech"),
+    Patch(facecolor="#ff5566", label="Clothing")
+]
+
+plt.legend(handles=handles)
+
+plt.xticks(rotation=30, ha="right")
+plt.show()
